@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Opis obliczania rat malejących</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <section id="opis">
+        <header>
+            <h1>Opis obliczania rat kredytu malejących</h1>
+        </header>
+
+        <article>
+            <p>
+                <strong>Rata kredytu</strong> to kwota, którą kredytobiorca spłaca bankowi co miesiąc. 
+                W systemie <dfn>rat malejących</dfn> wysokość płatności zmniejsza się z każdym kolejnym miesiącem trwania umowy.
+            </p>
+
+            <blockquote>
+                Rata składa się z dwóch kluczowych części: <strong>kapitałowej</strong> oraz <strong>odsetkowej</strong>. 
+                Część kapitałowa pozostaje stała, natomiast odsetkowa maleje wraz z ubywaniem długu.
+            </blockquote>
+        </article>
+
+        <hr>
+
+        <section id="dane">
+            <h3>Dane potrzebne do obliczeń</h3>
+            <ul>
+                <li>Kwota kredytu (<em>K</em>)</li>
+                <li>Liczba rat (<em>n</em>)</li>
+                <li>Oprocentowanie roczne (w %)</li>
+            </ul>
+        </section>
+
+        <section id="metodologia">
+            <h3>Sposób obliczania raty</h3>
+            <ol>
+                <li>
+                    Obliczenie <strong>stałej części kapitałowej</strong> poprzez podzielenie całkowitej kwoty kredytu przez liczbę rat.
+                </li>
+                <li>
+                    Wyznaczenie <strong>miesięcznej stopy procentowej</strong> (<em>r</em>) poprzez podzielenie oprocentowania rocznego przez 12, a następnie przez 100.
+                </li>
+                <li>
+                    Wyliczenie <strong>części odsetkowej</strong> na podstawie aktualnego salda zadłużenia.
+                </li>
+            </ol>
+        </section>
+
+        <section id="wzory">
+            <h3>Wzory wykorzystywane do obliczeń</h3>
+
+            <div class="formula-box">
+                <p><strong>Część kapitałowa raty (R<sub>k</sub>):</strong></p>
+                <code>R<sub>k</sub> = K / n</code>
+            </div>
+
+            <div class="formula-box">
+                <p><strong>Część odsetkowa raty (R<sub>o</sub>):</strong></p>
+                <code>R<sub>o</sub> = Pozostały Kapitał × r</code>
+            </div>
+
+            <div class="formula-box">
+                <p><strong>Rata całkowita:</strong></p>
+                <code>Rata = R<sub>k</sub> + R<sub>o</sub></code>
+            </div>
+
+            <aside>
+                <p>Legenda oznaczeń:</p>
+                <dl>
+                    <dt><strong>K</strong></dt>
+                    <dd>Całkowita kwota kredytu</dd>
+                    <dt><strong>n</strong></dt>
+                    <dd>Łączna liczba rat do spłacenia</dd>
+                    <dt><strong>r</strong></dt>
+                    <dd>Miesięczna stopa procentowa</dd>
+                </dl>
+            </aside>
+        </section>
+
+        <footer>
+            <p>
+                <em>Uwaga: Wysokość pierwszej raty jest najwyższa. Wszystkie wyniki finansowe są zaokrąglane do dwóch miejsc po przecinku.</em>
+            </p>
+        </footer>
+    </section>
+
+</body>
+</html>
