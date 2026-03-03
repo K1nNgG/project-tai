@@ -2,81 +2,72 @@
 <html lang="pl-PL">
 <head>
     <meta charset="UTF-8">
-    <title>Operacje na macierzach 3x4</title>
+    <title>Macierze</title>
+    <link rel="stylesheet" href="../main/style.css">
+    <link rel="stylesheet" href="../macierze/macierze.css">
 </head>
 <body>
+<h1> Macierze </h1>
+<h3>1. Podaj wymiary macierzy</h3>
+<form method="get">
+    Wiersze: <input type="number" name="w" value="<?php echo $_GET['w'] ?? 2; ?>">
+    Kolumny: <input type="number" name="k" value="<?php echo $_GET['k'] ?? 2; ?>">
+    <input type="submit" value="Ustaw">
+</form>
 
-<h2>Operacje na macierzach 3×4</h2>
+<?php
+if (isset($_GET['w'], $_GET['k'])) {
+    $w = $_GET['w'];
+    $k = $_GET['k'];
 
-<form method="post">
-    <h3>Macierz A</h3>
-    <?php
-    for ($i = 0; $i < 3; $i++) {
-        for ($j = 0; $j < 4; $j++) {
+    echo "<h3>2. Wpisz dane i wybierz operację</h3>";
+    echo '<form method="post" action="?w='.$w.'&k='.$k.'">';
+    
+    echo "<b>Macierz A</b><br>";
+    for ($i = 0; $i < $w; $i++) {
+        for ($j = 0; $j < $k; $j++) {
             echo '<input type="number" name="A['.$i.']['.$j.']" required> ';
         }
         echo '<br>';
     }
-    ?>
 
-    <h3>Macierz B</h3>
-    <?php
-    for ($i = 0; $i < 3; $i++) {
-        for ($j = 0; $j < 4; $j++) {
+    echo "<br><b>Macierz B</b><br>";
+    for ($i = 0; $i < $w; $i++) {
+        for ($j = 0; $j < $k; $j++) {
             echo '<input type="number" name="B['.$i.']['.$j.']" required> ';
         }
         echo '<br>';
     }
-    ?>
 
-    <br>
+    echo '<br>
         <button type="submit" name="op" value="dodaj">Dodaj</button>
         <button type="submit" name="op" value="odejmij">Odejmij</button>
         <button type="submit" name="op" value="pomnoz">Pomnóż</button>
         <button type="submit" name="op" value="dziel">Dziel</button>
-</form>
+    </form>';
+}
 
-<?php
 if (isset($_POST['A'], $_POST['B'], $_POST['op'])) {
-
-    $A = $_POST['A'] ?? [];
-    $B = $_POST['B'] ?? [];
+    $A = $_POST['A'];
+    $B = $_POST['B'];
     $op = $_POST['op'];
-    $C = [];
+    $w = $_GET['w'];
+    $k = $_GET['k'];
 
-    echo "<h3>Wynik operacji</h3>";
-    echo "<table border='1' cellpadding='5'>";
-
-    for ($i = 0; $i < 3; $i++) {
+    echo "<h3>Wynik:</h3><table border='1'>";
+    for ($i = 0; $i < $w; $i++) {
         echo "<tr>";
-        for ($j = 0; $j < 4; $j++) {
+        for ($j = 0; $j < $k; $j++) {
+            $wynik = 0;
+            if ($op == 'dodaj') $wynik = $A[$i][$j] + $B[$i][$j];
+            if ($op == 'odejmij') $wynik = $A[$i][$j] - $B[$i][$j];
+            if ($op == 'pomnoz') $wynik = $A[$i][$j] * $B[$i][$j];
+            if ($op == 'dziel') $wynik = ($B[$i][$j] != 0) ? $A[$i][$j] / $B[$i][$j] : 'błąd';
 
-        if ($op == 'dodaj') {
-            $C[$i][$j] = $A[$i][$j] + $B[$i][$j];
-        }
-
-        if ($op == 'odejmij') {
-            $C[$i][$j] = $A[$i][$j] - $B[$i][$j];
-        }
-
-        if ($op == 'pomnoz') {
-            $C[$i][$j] = $A[$i][$j] * $B[$i][$j];
-        }
-        
-        if ($op == 'dziel') {
-            if ($B[$i][$j] != 0) {
-                $C[$i][$j] = $A[$i][$j] / $B[$i][$j];
-            } else {
-                $C[$i][$j] = 'brak';
-                }
-        }
-
-
-            echo "<td>".$C[$i][$j]."</td>";
+            echo "<td>".$wynik."</td>";
         }
         echo "</tr>";
     }
-
     echo "</table>";
 }
 ?>
