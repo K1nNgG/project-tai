@@ -73,12 +73,14 @@ main {
     background-image: url("matematyka.png");
     background-size: cover;
     background-position: center;
+	min-height: 438px;
 }
 
 #ekonomia {
     background-image: url("ekonomia.png");
     background-size: cover;
     background-position: center;
+	min-height: 438px;
 }
 
 .flex-blok h1 {
@@ -118,7 +120,15 @@ footer {
     flex-wrap: wrap;
 }
 
-.flex-blokB {
+#eFunkcja {
+	display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.flex-blok-sub {
     aspect-ratio: 160/80;
     width: clamp(100px, 30vw, 160px);
     background-color: #E0E0E0;
@@ -130,8 +140,17 @@ footer {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+	text-align: center;
 
     font-family: "Alata", sans-serif;
     font-weight: 400;
     font-style: normal;
+}
+
+.flex-blok-sub:hover {
+	background-color: #FFFFFF;
+}
+
+.link {
+	text-decoration: none;
 }
