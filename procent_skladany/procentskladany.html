@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Procent składany</title>
+		<h1>Procent składany</h1>
+		<link rel="stylesheet" href="../main/style.css">
+	<head>
+	<body>
+	Wprowadź dane:<br><br>
+		<form name='formatka'>
+		Kapitał początkowy: <input type='text' value='' id='kapitalny'><br><br>
+		Roczna stopa oprocentowania: <input type='text' value='' id='stopa'><br><br>
+		Liczba kapitalizacji w roku: <input type='text' value='' id='kapitalizacje'><br><br>
+		Czas trwania inwestycji (lata): <input type='text' value='' id='czastrwania'><br><br>
+		<input type='button' value='Prześlij' onClick='funkcja()'>
+		</form>
+		<script type='text/javascript'>
+		function funkcja() {
+		kapital = parseFloat(document.getElementById('kapitalny').value)
+		oprocentowanie = parseFloat(document.getElementById('stopa').value)
+		kapitalizacjee = parseFloat(document.getElementById('kapitalizacje').value)
+		okresczasowy = parseFloat(document.getElementById('czastrwania').value)
+		potega=kapitalizacjee*okresczasowy
+		nawias=1+oprocentowanie/kapitalizacjee
+		alert(potega)//testowe
+		alert(nawias)//testowe
+		nowynawias=nawias
+		while (potega>0) {
+		nowynawias=nowynawias*nawias
+		potega--
+		}
+		alert(kapital*nowynawias)
+		}
+		</script>
+	</body>
+</html>
