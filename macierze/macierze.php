@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Macierze</title>
+    <link rel="stylesheet" href="../main/style.css">
+    <link rel="stylesheet" href="../macierze/macierze.css">
 </head>
 <body>
-
+<h1> Macierze </h1>
 <h3>1. Podaj wymiary macierzy</h3>
 <form method="get">
     Wiersze: <input type="number" name="w" value="<?php echo $_GET['w'] ?? 2; ?>">
