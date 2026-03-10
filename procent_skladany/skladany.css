@@ -1,0 +1,51 @@
+header {
+	text-align: center;
+}
+
+/* Główne obramowanie wokół przycisków */
+section#menu {
+	width: 30%;           
+	margin: 20px auto;    
+	display: flex;        /* Przyciski obok siebie */
+	background-color: #d1d5db;
+	border: 2px solid #6b7280;
+	padding: 6px;
+	border-radius: 10px;
+}
+
+/* Wygląd przycisków */
+#przycisk1, #przycisk2 {
+	flex: 1;              /* Równa szerokość przycisków */
+	padding: 12px 6px;
+	border: none;
+	background: none;
+	font-weight: bold;
+	color: #4b5563;
+}
+
+/* Aktywny przycisk (kliknięty) */
+.aktywny {
+	background-color: #dbe4f3 !important; 
+	color: #111827 !important;
+	border-radius: 7px;
+	box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+	border: 1px solid #9ca3af !important;
+}
+
+body {
+	text-align:center;
+}
+
+/* Sekcja z formatką (model klasyczny) */
+section#klasyczna {
+	float: left;
+	width: 100%;
+}
+
+/* Sekcja z formatką (model z dopłatami) */
+section#doplaty {
+	float:left;
+	width:100%;
+}
+
+

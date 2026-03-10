@@ -2,35 +2,78 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Procent składany</title>
-		<h1>Procent składany</h1>
+		<a href="../main/index.html" class="link">  <!-- przy kliknięciu na logo, następuję powrót na glówną stronę -->
+			<header>
+				<section id="logo">
+					<h1>CALCULI</h1>
+					<img src="../main/logo_vector.svg" alt="Logo Strony">
+					<h1>PERITUS</h1>
+				</section> 
+				<h4>CREATI AD NUMERANDUM</h4> <!-- LOGO -->
+			</header>
+		</a> 
+
 		<link rel="stylesheet" href="../main/style.css">
+		<link rel="stylesheet" href="skladany.css">
 	<head>
 	<body>
-	Wprowadź dane:<br><br>
+	<section id="menu">
+		<button id="przycisk1" class="aktywny" onclick="pokazKlasyczny()">Klasyczny</button>
+		<button id="przycisk2" onclick="pokazDoplaty()">Z dopłatami</button>
+	</section><p>
+	<script type='text/javascript'>
+		function pokazKlasyczny() {
+			// Pokaż jedną sekcję, schowaj drugą
+			document.getElementById('klasyczna').style.display = 'block';
+			document.getElementById('doplaty').style.display = 'none';
+
+			// Przełącz wygląd przycisków
+			document.getElementById('przycisk1').className = 'aktywny';
+			document.getElementById('przycisk2').className = '';
+		}
+
+		function pokazDoplaty() {
+			// 1. Schowaj jedną sekcję, pokaż drugą
+			document.getElementById('klasyczna').style.display = 'none';
+			document.getElementById('doplaty').style.display = 'block';
+
+			// 2. Przełącz wygląd przycisków
+			document.getElementById('przycisk1').className = '';
+			document.getElementById('przycisk2').className = 'aktywny';
+		}
+	</script>
+	<section id="klasyczna" style="display: block;">
+		<h2>To jest procent klasyczny</h2>
+		Wprowadź dane:<br><br>
 		<form name='formatka'>
 		Kapitał początkowy: <input type='text' value='' id='kapitalny'><br><br>
-		Roczna stopa oprocentowania: <input type='text' value='' id='stopa'><br><br>
+		Roczna stopa oprocentowania (%): <input type='text' value='' id='stopa'><br><br>
 		Liczba kapitalizacji w roku: <input type='text' value='' id='kapitalizacje'><br><br>
 		Czas trwania inwestycji (lata): <input type='text' value='' id='czastrwania'><br><br>
 		<input type='button' value='Prześlij' onClick='funkcja()'>
 		</form>
 		<script type='text/javascript'>
 		function funkcja() {
-		kapital = parseFloat(document.getElementById('kapitalny').value)
-		oprocentowanie = parseFloat(document.getElementById('stopa').value)
-		kapitalizacjee = parseFloat(document.getElementById('kapitalizacje').value)
-		okresczasowy = parseFloat(document.getElementById('czastrwania').value)
-		potega=kapitalizacjee*okresczasowy
-		nawias=1+oprocentowanie/kapitalizacjee
-		alert(potega)//testowe
-		alert(nawias)//testowe
-		nowynawias=nawias
-		while (potega>0) {
-		nowynawias=nowynawias*nawias
-		potega--
-		}
-		alert(kapital*nowynawias)
+			kapital = parseFloat(document.getElementById('kapitalny').value)
+			oprocentowanie = parseFloat(document.getElementById('stopa').value)/100
+			kapitalizacjee = parseFloat(document.getElementById('kapitalizacje').value)
+			okresczasowy = parseFloat(document.getElementById('czastrwania').value)
+			potega=kapitalizacjee*okresczasowy
+			nawias=1+oprocentowanie/kapitalizacjee
+			alert(potega)//testowe
+			alert(nawias)//testowe
+			nowynawias=nawias
+			while (potega>0) {
+				nowynawias=nowynawias*nawias
+				potega--
+			}
+			alert(kapital*nowynawias)
 		}
 		</script>
+	</section>
+
+	<section id="doplaty" style="display: none;">
+		<h2>To są dopłaty</h2>
+	</section>
 	</body>
 </html>
