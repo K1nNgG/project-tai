@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obliczanie PIT 2020</title>
+    <link rel="stylesheet" href="../main/style.css">
+    <link rel="stylesheet" href="style_pit.css">
+</head>
+<body>
+    <a href="../main/index.html" class="link">  <!-- przy kliknięciu na logo, następuję powrót na glówną stronę -->
+    <header>
+        <section id="logo">
+            <h1>CALCULI</h1>
+            <img src="../main/logo_vector.svg" alt="Logo Strony">
+            <h1>PERITUS</h1>
+        </section> 
+        <h4>CREATI AD NUMERANDUM</h4> <!-- LOGO -->
+    </header>
+    </a>
+    <section id="blok">
+    <label>Podaj przychód roczny:</label><br>
+    <input type="text" id="przychod"><br>
+    <label>Podaj koszty uzyskania przychodu:</label><br>
+    <input type="text" id="koszty"><br>
+    <label>Podaj ulgi od podatku:</label><br>
+    <input type="text" id="ulgi"><br>
+    <button onclick="oblicz()">Oblicz podatek</button> <!-- wywolanie funkcji przyciskiem -->
+    <p id="wynik"></p>
+</section>
+<script type="text/javascript">
+function oblicz() { //funkcja do obliczania dochodu i podatku
+    var przychod = document.getElementById("przychod").value;
+    var koszty = document.getElementById("koszty").value;   
+    var ulgi = document.getElementById("ulgi").value;
+    if ((przychod=="")||(koszty=="")||(ulgi=="")){ //sprawdzenie czy pola nie sa puste
+        document.getElementById("wynik").innerHTML="Wypełnij wszystkie pola";
+        return;
+    }
+    if((isNaN(przychod))||isNaN(koszty)||(isNaN(ulgi))){ //sprawdzenie czy podae sa tylko liczby
+        document.getElementById("wynik").innerHTML="Wartości muszą być liczbami";
+        return;
+    }
+    if ((przychod<0)||(koszty<0)||(ulgi<0)){ //sprawdzenie czy podane wartosc nie sa ujemne
+        document.getElementById("wynik").innerHTML="Wartości nie mogą być ujemne";
+        return;
+    }
+    var dochod=przychod-koszty;
+    if (dochod<0) { //sprawdzenie czy dochód nie jest ujemny
+        document.getElementById("wynik").innerHTML="Koszty nie mogą być większe niż przychód";
+        return;
+    }
+    var podatek;
+    if (dochod<=85528) { //policzenie podatku
+        podatek=dochod*0.17-1360;
+    } 
+    else{
+        var nadwyzka=dochod-85528; //policzenie podatku gdy dochod przekracza 85528 rocznie
+        podatek=(85528*0.17)+(nadwyzka*0.32)-1360;
+    }
+    podatek1=podatek-ulgi; //policzenie nowego podatku po odjeciu ulg
+
+    if (podatek1<0) {
+        podatek1=podatek;
+    }
+    else{
+        podatek=podatek1 //przypisanie zmiennej bez zmiany by wyswietlil sie wynik
+    }
+    podatek=Math.round(podatek); //zaokrąglenie wyniku podatku
+    document.getElementById("wynik").innerHTML= //wypisanie obliczonych wartosci
+        "Dochód: "+dochod+" zł<br>" +           
+        "Podatek do zapłaty: "+podatek+" zł";
+}
+</script>  
+</body>
+</html>
