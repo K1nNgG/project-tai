@@ -7,7 +7,15 @@
     <link rel="stylesheet" href="../macierze/macierze.css">
 </head>
 <body>
-<h1> Macierze </h1>
+<header>
+        <section id="logo">
+            <h1>CALCULI</h1>
+            <img src="../main/logo_vector.svg" alt="Logo Strony">
+            <h1>PERITUS</h1>
+        </section>
+        <h4>CREATI AD NUMERANDUM</h4> 
+</header>
+<h1 id="mac"> Macierze </h1>
 <h3>1. Podaj wymiary macierzy</h3>
 <form method="get">
     Wiersze: <input type="number" name="w" value="<?php echo $_GET['w'] ?? 2; ?>">
