@@ -7,27 +7,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+	<a href="../main/index.html" class="link">  <!-- przy kliknięciu na logo, następuję powrót na glówną stronę -->
     <header>
         <section id="logo">
             <h1>CALCULI</h1>
             <img src="logo_vector.svg" alt="Logo Strony">
             <h1>PERITUS</h1>
-        </section>
-        <h4>CREATI AD NUMERANDUM</h4> 
+        </section> 
+        <h4>CREATI AD NUMERANDUM</h4> <!-- LOGO -->
     </header>
+	</a>
     <main>
-        <section id="matematyka" class="flex-blok" onmouseover="zmien1()" onmouseout="zPowrotem1()">
+        <section id="matematyka" class="flex-blok" onmouseover="zmien1()" onmouseout="zPowrotem1()"> <!-- Blok Matematyka -->
             <h1 id="napisZnika">MATEMATYKA</h1>
             <section id="mFunkcja">
                 <h1>MATEMATYKA</h1>
-			<a href="http://localhost/5c/projekt-tai/macierze/macierze.php" class="link">
+			<a href="../macierze/macierze.php" class="link"> <!-- Menu przejścia na inne strony Bloku matematyka -->
 				<section class="flex-blok-sub">
 					MACIERZE
 				</section>
 			</a>
-			<a href="" class="link">
+			<a href="../liczby_zespolone/LiczbyZespolone.html" class="link">
                 <section class="flex-blok-sub">
-                    LICZBY ZESPOLONE
+                    LICZBY ZESPOLONE 
                 </section>
 			</a>
 			<a href="" class="link">
@@ -37,16 +39,16 @@
 			</a>	
             </section>
         </section>
-        <section id="ekonomia" class="flex-blok" onmouseover="zmien2()" onmouseout="zPowrotem2()">
+        <section id="ekonomia" class="flex-blok" onmouseover="zmien2()" onmouseout="zPowrotem2()"> <!-- Blok Ekonomia -->
 			<h1 id="napisZnika">EKONOMIA</h1>
 		    <section id="eFunkcja">
                 <h1>EKONOMIA</h1>
-			<a href="" class="link">	
+			<a href="" class="link">	<!-- Menu przejścia na inne strony bloku ekonomia -->
 				<section class="flex-blok-sub">
 					PIT
 				</section>
 			</a>
-			<a href="" class="link">	
+			<a href="../kredyt/obliczenia.html" class="link">	
                 <section class="flex-blok-sub">
                     KREDYT
 				</section>
@@ -56,7 +58,7 @@
                     LOKATA
                 </section>
 			</a>
-			<a href="" class="link">	
+			<a href="../procent_skladany/procentskladany.html" class="link">	
 				<section class="flex-blok-sub">
                     PROCENT SKŁADANY
                 </section>
@@ -65,7 +67,14 @@
         </section>
     </main>
     <footer>
-        ©2026 - Calculi Peritus  |   All right reserved
+		<table>
+			<tr>
+				<td class="table-td">OPIS MERYTORYCZNY</td><td class="table-td">POMOC DLA UŻYTKOWNIKA</td>
+			</tr>
+			<tr>
+				<td colspan="2">©2026 - Calculi Peritus  |   All rights reserved</td>  <!-- Copyright -->
+			</tr>
+		</table>		
     </footer>
     <script src="index.js"></script>
 </body>

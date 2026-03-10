@@ -1,28 +1,35 @@
+/* Import czcionek z Google Fonts: Alata, Bacasime Antique oraz Poppins (różne grubości) */
 @import url('https://fonts.googleapis.com/css2?family=Alata&family=Bacasime+Antique&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* Ustawienia globalne dla całej strony */
 body {
     min-height: 100vh;
     margin: 0;
     background-image: url("main.png");
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    background-size: cover; /* tło pokrywa cały ekran */
+    background-position: center; /* Centruje grafikę tła */
+	
+	font-family: "Alata", sans-serif;
 }
 
+/* Nagłówek strony */
 header {
     font-family: "Bacasime Antique", serif;
     font-weight: 400;
     font-style: normal;
-    
     text-align: center;
-    gap: clamp(12px,3vw,32px);
+    /* Płynny odstęp między elementami */
+    gap: clamp(12px, 3vw, 32px); 
 }
 
+/* Logotyp w nagłówku, obrazek */
 header img {
     width: clamp(64px, 7vw, 100px);
     height: clamp(52px, 4.5vw, 80px);
 }
 
+/* Kontener na logo i tekst w nagłówku */
 header #logo {
     display: flex;
     justify-content: center;
@@ -30,89 +37,97 @@ header #logo {
     gap: 25px;
 }
 
+/* Tytuł główny w nagłówku */
 header h1 {
     font-size: clamp(20px, 5vw, 36px);
     color: #211200;
 }
 
+/* Podtytuł w nagłówku */
 header h4 {
-    font-size: clamp(12px, 2vw, 20px);
+    font-size: clamp(12px, 2vw, 22px);
     color: #505D68;
 }
 
+/* Główna sekcja z blokami */
 main {
     margin-top: clamp(32px, 5vw, 80px);
     gap: clamp(16px, 5vw, 32px);
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Pozwala kafelkom przechodzić do nowej linii na mniejszych ekranach */
 }
 
+/* Styl pojedynczego głównego bloku (Matematyka/Ekonomia) */
 .flex-blok {
     width: clamp(360px, 50vw, 561px);
-    aspect-ratio: 561 / 438;
+    aspect-ratio: 561 / 438; /* Zachowuje stałe proporcje bloku */
     border-radius: 25px;
     box-shadow: 0px 3px 30px rgba(0,0,0,1);
-    transition: box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease; /* Płynne przejście cienia */
     box-sizing: border-box;
-    padding: 120px 99px 120px 99px;
+    padding: 120px 99px;
 }
 
+/* Efekt najechania - usunięcie cienia */
 .flex-blok:hover {
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
 }
 
+/* Wspólne cechy bloków tematycznych */
 #matematyka, #ekonomia {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/* Konfiguracja tła dla Matematyki */
 #matematyka {
     background-image: url("matematyka.png");
     background-size: cover;
     background-position: center;
-	min-height: 438px;
+    min-height: 438px;
 }
 
+/* Konfiguracja tła dla Ekonomii */
 #ekonomia {
     background-image: url("ekonomia.png");
     background-size: cover;
     background-position: center;
-	min-height: 438px;
+    min-height: 438px;
 }
 
+/* Napisy wewnątrz dużych bloków */
 .flex-blok h1 {
     font-size: clamp(32px, 5vw, 48px);
     letter-spacing: 0.15em;
     color: #E0E0E0;
     font-family: "Alata", sans-serif;
     font-weight: 400;
-    font-style: normal;
     transition: opacity 0.3s ease;
 }
 
+/* Ukrywanie napisu głównego po najechaniu kursorem */
 .flex-blok:hover #napisZnika {
     opacity: 0;
     display: none;
 }
 
+/* Stopka strony */
 footer {
     font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-
     font-size: clamp(8px, 1.2vw, 14px);
-    line-height: 21px;
     display: flex;
     justify-content: center;
+	text-align: center;
     color: #505D68;
     line-height: 1.5;
     margin-top: clamp(48px, 8vw, 130px);
 }
 
-#mFunkcja {
+/* Kontenery na sub-funkcje (domyślnie ukryte, do pokazania przez JS lub hover) */
+#mFunkcja, #eFunkcja {
     display: none;
     justify-content: center;
     align-items: center;
@@ -120,16 +135,9 @@ footer {
     flex-wrap: wrap;
 }
 
-#eFunkcja {
-	display: none;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-
+/* Mniejsze bloki wyboru (podkategorie) */
 .flex-blok-sub {
-    aspect-ratio: 160/80;
+    aspect-ratio: 160 / 80;
     width: clamp(100px, 30vw, 160px);
     background-color: #E0E0E0;
     border-radius: 8px;
@@ -140,17 +148,27 @@ footer {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-	text-align: center;
-
+    text-align: center;
     font-family: "Alata", sans-serif;
     font-weight: 400;
-    font-style: normal;
 }
 
+/* Efekt najechania na mniejszy blok - zmiana koloru tła na biały */
 .flex-blok-sub:hover {
-	background-color: #FFFFFF;
+    background-color: #FFFFFF;
 }
 
+/* Klasa usuwająca podkreślenie z linków */
 .link {
-	text-decoration: none;
+    text-decoration: none;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+.table-td {
+	font-size: clamp(12px, 1.2vw, 18px);
+	color: black;
+	border: 1px solid red;
 }
