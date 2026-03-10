@@ -4,15 +4,25 @@
     <meta charset="UTF-8">
     <title>Macierze</title>
     <link rel="stylesheet" href="../main/style.css">
-    <link rel="stylesheet" href="../macierze/macierze.css">
+    <link rel="stylesheet" href="macierze.css">
 </head>
 <body>
-<h1> Macierze </h1>
-<h3>1. Podaj wymiary macierzy</h3>
+<a href="../main/index.html" class="link">  <!-- przy kliknięciu na logo, następuję powrót na glówną stronę -->
+    <header>
+        <section id="logo">
+            <h1>CALCULI</h1>
+            <img src="../main/logo_vector.svg" alt="Logo Strony">
+            <h1>PERITUS</h1>
+        </section> 
+        <h4>CREATI AD NUMERANDUM</h4> <!-- LOGO -->
+    </header>
+</a> 
+<br><h1> Macierze </h1>
+<h3 id="wymiary">1. Podaj wymiary macierzy</h3>
 <form method="get">
-    Wiersze: <input type="number" name="w" value="<?php echo $_GET['w'] ?? 2; ?>">
-    Kolumny: <input type="number" name="k" value="<?php echo $_GET['k'] ?? 2; ?>">
-    <input type="submit" value="Ustaw">
+    Wiersze: <input type="number" name="w"  id ="ww" value="<?php echo $_GET['w'] ?? 2; ?>"> <br> <br>
+    Kolumny: <input type="number" name="k" id="kk" value="<?php echo $_GET['k'] ?? 2; ?>">
+    <input type="submit" value="Ustaw" id="pierwszyprzycisk">
 </form>
 
 <?php
@@ -20,7 +30,7 @@ if (isset($_GET['w'], $_GET['k'])) {
     $w = $_GET['w'];
     $k = $_GET['k'];
 
-    echo "<h3>2. Wpisz dane i wybierz operację</h3>";
+    echo "<h3 id='operacja'>2. Wpisz dane i wybierz operację</h3>";
     echo '<form method="post" action="?w='.$w.'&k='.$k.'">';
     
     echo "<b>Macierz A</b><br>";
@@ -40,10 +50,10 @@ if (isset($_GET['w'], $_GET['k'])) {
     }
 
     echo '<br>
-        <button type="submit" name="op" value="dodaj">Dodaj</button>
-        <button type="submit" name="op" value="odejmij">Odejmij</button>
-        <button type="submit" name="op" value="pomnoz">Pomnóż</button>
-        <button type="submit" name="op" value="dziel">Dziel</button>
+        <button type="submit" name="op" value="dodaj" id="b1">Dodaj</button>
+        <button type="submit" name="op" value="odejmij" id="b2">Odejmij</button>
+        <button type="submit" name="op" value="pomnoz" id="b3">Pomnóż</button>
+        <button type="submit" name="op" value="dziel" id="b4">Dziel</button>
     </form>';
 }
 
@@ -54,7 +64,7 @@ if (isset($_POST['A'], $_POST['B'], $_POST['op'])) {
     $w = $_GET['w'];
     $k = $_GET['k'];
 
-    echo "<h3>Wynik:</h3><table border='1'>";
+    echo "<h3>Wynik:</h3><table border='6'>";
     for ($i = 0; $i < $w; $i++) {
         echo "<tr>";
         for ($j = 0; $j < $k; $j++) {
