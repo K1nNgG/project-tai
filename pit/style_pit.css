@@ -1,0 +1,31 @@
+*{
+    text-align: center;
+}
+p{
+    font-size: 50px;
+    color: darkslategray;
+}
+button{
+    font-size: 30px;
+    border-color: black;
+    background-color: lightgray;
+    color: darkslategray;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border-style: dotted ;
+    border: top left right bottom 100px; ;
+}
+label{
+    margin: 20px;
+    font-size: 30px;
+    padding: 10px;
+    color: darkslategrey;
+    font-weight:bold;
+}
+input{
+   margin: 20px;
+    font-size: 30px;
+    background-color: lightgray;
+     
+}
