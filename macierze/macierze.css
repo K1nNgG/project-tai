@@ -1,3 +1,45 @@
-.mac {
+h1 {
+    color: #6b6618;
     text-align: center;
+}
+
+h3#wymiary {
+    font-style: italic;
+    font-size: 140%;
+}
+
+h3#operacja {
+    font-style: italic;
+    font-size: 140%;
+}
+
+td {
+    color: #0d0d03;
+    font-size: 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+}
+
+#pierwszyprzycisk {
+    background-color: #f7f5dc;
+}
+
+#pierwszyprzycisk:hover {
+    color: white;
+}
+
+#ww:hover {
+    font-style: italic;
+}
+
+#kk:hover {
+    font-style: italic;
+}
+
+#b1,#b2,#b3,#b4 {
+    background-color: #f7f5dc;
+}
+
+#b1:hover,#b2:hover,#b3:hover,#b4:hover {
+    color: white;
 }
