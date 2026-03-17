@@ -61,7 +61,7 @@ main {
 
 /* Styl pojedynczego głównego bloku (Matematyka/Ekonomia) */
 .flex-blok {
-    width: clamp(360px, 50vw, 561px);
+    width: clamp(180px, 70vw, 561px);  
     aspect-ratio: 561 / 438; /* Zachowuje stałe proporcje bloku */
     border-radius: 25px;
     box-shadow: 0px 3px 30px rgba(0,0,0,1);
@@ -100,7 +100,7 @@ main {
 
 /* Napisy wewnątrz dużych bloków */
 .flex-blok h1 {
-    font-size: clamp(32px, 5vw, 48px);
+    font-size: clamp(8px, 5vw, 48px);
     letter-spacing: 0.15em;
     color: #E0E0E0;
     font-family: "Alata", sans-serif;
@@ -117,14 +117,29 @@ main {
 /* Stopka strony */
 footer {
     font-family: "Poppins", sans-serif;
-    font-size: clamp(8px, 1.2vw, 14px);
+    font-size: clamp(4px, 1.2vw, 14px);
     display: flex;
+    flex-direction: column;
     justify-content: center;
 	text-align: center;
     color: #505D68;
     line-height: 1.5;
-    margin-top: clamp(48px, 8vw, 130px);
+    margin-top: clamp(48px, 8vw, 60px);
 }
+
+footer #user-help {
+    display: flex;
+    justify-content: center;
+    font-weight: 400;
+    gap:40px;
+    font-size: clamp(12px, 2vw, 20px);
+    color: #505D68;
+}
+
+#user-help a {
+    color: inherit;        
+}
+
 
 /* Kontenery na sub-funkcje (domyślnie ukryte, do pokazania przez JS lub hover) */
 #mFunkcja, #eFunkcja {
@@ -138,11 +153,11 @@ footer {
 /* Mniejsze bloki wyboru (podkategorie) */
 .flex-blok-sub {
     aspect-ratio: 160 / 80;
-    width: clamp(100px, 30vw, 160px);
+    width: clamp(75px, 15vw, 160px);
     background-color: #E0E0E0;
     border-radius: 8px;
     color: #211200;
-    font-size: clamp(12px, 2vw, 20px);
+    font-size: clamp(8px, 2vw, 20px);
     padding: 10px;
     display: flex;
     justify-content: center;
@@ -163,12 +178,24 @@ footer {
     text-decoration: none;
 }
 
-table {
-	border-collapse: collapse;
+/* ustawienie pillarów po lewej i prawej stronie z zachowanie responsywności */
+#left-pillar {
+    position: fixed;      
+    z-index: 5;     
+    height: auto;
+    width: 5.6vw;
+    min-width: 17px;
+    left: 0px;
+    top: 0px;
 }
 
-.table-td {
-	font-size: clamp(12px, 1.2vw, 18px);
-	color: black;
-	border: 1px solid red;
+#right-pillar {
+    position: fixed;      
+    z-index: 5;     
+    height: auto;
+    width: 5.6vw;
+    min-width: 17px;
+    right: 0px;
+    top: 0px;
 }
+
