@@ -1,114 +1,3 @@
-<!DOCTYPE html>
-<html lang="pl">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Kalkulator rat malejących</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="../main/style.css">
-	<link rel="stylesheet" href="kredyt.css">
-	<a href="../main/index.html" class="link">
-	<!-- przy kliknięciu na logo, następuje powrót na główną stronę -->
-	<header>
-		<section id="logo">
-		<h1>CALCULI</h1>
-		<img src="../main/logo_vector.svg" alt="Logo Strony">
-		<h1>PERITUS</h1>
-		</section>
-		<h4>CREATI AD NMERANDUM</h4>
-		<!-- LOGO -->
-	</header>
-	</a>
-</head>
-
-<body>
-
-<!-- =========================
-     FORMULARZ
-========================= -->
-<form id="loanForm">
-
-  <div class="input-group">
-    <label for="kwota">Kwota kredytu:</label>
-    <div class="input-with-unit">
-      <input type="text" id="kwota" placeholder="10000">
-      <span class="unit">zł</span>
-    </div>
-    <div class="tooltip" id="kwotaTooltip">Nieprawidłowa wartość</div>
-  </div>
-
-  <div class="input-group">
-    <label for="raty">Ilość rat miesięcznych:</label>
-    <div class="input-with-unit no-unit">
-      <input type="text" id="raty" placeholder="24">
-    </div>
-    <div class="tooltip" id="ratyTooltip">Nieprawidłowa wartość</div>
-  </div>
-
-  <div class="input-group">
-    <label for="oprocentowanie">Stopa procentowa:</label>
-    <div class="input-with-unit">
-      <input type="text" id="oprocentowanie" placeholder="5">
-      <span class="unit">%</span>
-    </div>
-    <div class="tooltip" id="oprocentowanieTooltip">Nieprawidłowa wartość</div>
-  </div>
-
- <div class="input-group">
-  <label for="rodzajRaty">Rodzaj rat:</label>
-  <div class="input-with-unit no-unit">
-    <input type="text" id="rodzajRaty" name="rodzajRaty" placeholder="malejąca" readonly>
-  </div>
-</div>
-
-  <button type="submit">Oblicz</button>
-
-</form>
-<!-- =========================
-     WYNIKI
-========================= -->
-
-<div id="wyniki" style="display:none">
-
-    <h2>Wyniki</h2>
-
-    Pierwsza rata:<br>
-    <input id="pierwszaRata" readonly><br><br>
-
-    Ostatnia rata:<br>
-    <input id="ostatniaRata" readonly><br><br>
-
-    <table id="results" border="1">
-
-        <thead>
-            <tr>
-                <th>Rata nr</th>
-                <th>Część kapitałowa</th>
-                <th>Część odsetkowa</th>
-                <th>Rata całkowita</th>
-            </tr>
-        </thead>
-
-        <tbody></tbody>
-
-        <tfoot>
-            <tr>
-                <td colspan="3"><b>Łącznie do zapłaty</b></td>
-                <td id="sumaCalkowita"></td>
-            </tr>
-        </tfoot>
-
-    </table>
-
-    <br>
-
-    <button id="resetBtn">Licz ponownie</button>
-
-</div>
-
-
-<script>
-
 /* =====================================================
    POBRANIE ELEMENTÓW HTML
 ===================================================== */
@@ -130,8 +19,6 @@ const podpowiedzi = {
     raty: document.getElementById("ratyTooltip"),
     oprocentowanie: document.getElementById("oprocentowanieTooltip")
 };
-
-
 /* =====================================================
    FUNKCJE POMOCNICZE
 ===================================================== */
@@ -154,8 +41,6 @@ function pobierzLiczbe(wartosc) {
 
     return parseFloat(wartosc);
 }
-
-
 /* 
    Funkcja formatuje liczby np.
    10000 -> 10 000
@@ -166,8 +51,6 @@ function formatujLiczbe(liczba) {
         .toString()
         .replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }
-
-
 /*
    Sprawdza czy pole zawiera poprawną liczbę
 */
@@ -188,8 +71,6 @@ function sprawdzPole(input, tooltip) {
 
     return true;
 }
-
-
 /* =====================================================
    WALIDACJA PODCZAS WPISYWANIA
 ===================================================== */
@@ -199,12 +80,8 @@ for (let nazwa in pola) {
     pola[nazwa].addEventListener("input", () => {
 
         sprawdzPole(pola[nazwa], podpowiedzi[nazwa]);
-
     });
-
 }
-
-
 /* =====================================================
    FORMATOWANIE PÓL
 ===================================================== */
@@ -217,10 +94,7 @@ pola.kwota.addEventListener("blur", function () {
     if (!isNaN(liczba)) {
         this.value = formatujLiczbe(liczba) + " zł";
     }
-
 });
-
-
 /* Oprocentowanie -> np. 5 % */
 pola.oprocentowanie.addEventListener("blur", function () {
 
@@ -229,10 +103,7 @@ pola.oprocentowanie.addEventListener("blur", function () {
     if (!isNaN(liczba)) {
         this.value = liczba + " %";
     }
-
 });
-
-
 /* Liczba rat -> liczba całkowita */
 pola.raty.addEventListener("blur", function () {
 
@@ -241,14 +112,10 @@ pola.raty.addEventListener("blur", function () {
     if (!isNaN(liczba)) {
         this.value = liczba;
     }
-
 });
-
-
 /* =====================================================
    OBLICZENIE RAT MALEJĄCYCH
 ===================================================== */
-
 formularz.addEventListener("submit", function (e) {
 
     e.preventDefault();
@@ -262,7 +129,6 @@ formularz.addEventListener("submit", function (e) {
         alert("Popraw dane");
         return;
     }
-
     const kwota = pobierzLiczbe(pola.kwota.value);
     const liczbaRat = parseInt(pobierzLiczbe(pola.raty.value));
     const oprocentowanie = pobierzLiczbe(pola.oprocentowanie.value);
@@ -309,12 +175,9 @@ formularz.addEventListener("submit", function (e) {
 
     sekcjaWynikow.style.display = "block";
 });
-
-
 /* =====================================================
    RESET FORMULARZA
 ===================================================== */
-
 document.getElementById("resetBtn").onclick = function () {
 
     formularz.reset();
@@ -325,10 +188,5 @@ document.getElementById("resetBtn").onclick = function () {
 
         pola[nazwa].classList.remove("error");
         podpowiedzi[nazwa].style.display = "none";
-
     }
-
 };
-</script>
-</body>
-</html>
