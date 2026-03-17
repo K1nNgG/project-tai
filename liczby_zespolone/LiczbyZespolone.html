@@ -4,79 +4,81 @@
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Liczby zespolone</title>
-	<link rel="stylesheet" href="../main/style.css">														   <!-- Główny arkusz stylów używany w całym projekcie -->
-	<link rel="stylesheet" href="LiczbyZespolone.css">																	   <!-- Lokalny arkusz stylów dla strony -->
-</head>
+	<link rel="stylesheet" href="../main/style.css">														   <!--Główny arkusz stylów używany w całym projekcie-->
+	<link rel="stylesheet" href="LiczbyZespolone.css">														   <!--Lokalny arkusz stylów dla strony-->
 </head>
 <body>
-<a href="../main/index.html" class="link">  																   <!-- przy kliknięciu na logo, następuję powrót na glówną stronę -->
+<a href="../main/index.html" class="link">  																   <!--Przy kliknięciu na logo,następuję powrót na glówną stronę-->
+<img src="../main/left_pillar.png" id="left-pillar" alt="pillar">
+<img src="../main/right_pillar.png" id="right-pillar" alt="pillar">
     <header>
         <section id="logo">
             <h1>CALCULI</h1>
-            <img src="../main/logo_vector.svg" alt="Logo Strony">
+				<img src="../main/logo_vector.svg" alt="Logo Strony">
             <h1>PERITUS</h1>
         </section> 
         <h4>CREATI AD NUMERANDUM</h4> <!-- LOGO -->
     </header>
 </a>
+	<h2>Obliczanie liczb zespolonych</h2>
 <section id="post">
-	<p>Postać: a + bi</p>                                                                                       <!-- Informacja o ogólnej postaci liczby zespolonej -->
+	<p>Postać: a + bi</p>                                                                                       <!--Informacja o ogólnej postaci liczby zespolonej-->
 </section>
 <section id="liczby">
-<p>                                                                                                             <!-- Pierwsza liczba zespolona -->
-    a1: <input id="a1" type="number">                                                                           <!-- Część rzeczywista pierwszej liczby -->
-    b1: <input id="b1" type="number">                                                                           <!-- Część urojona pierwszej liczby -->
+<p>                                                                                                             <!--Pierwsza liczba zespolona-->
+    a1: <input id="a1" type="number">                                                                          	<!--Część rzeczywista pierwszej liczby-->
+    b1: <input id="b1" type="number">                                                                          	<!--Część urojona pierwszej liczby-->
 </p>
-<p>                                                                                                             <!-- Druga liczba zespolona -->
-    a2: <input id="a2" type="number">                                                                           <!-- Część rzeczywista drugiej liczby -->
-    b2: <input id="b2" type="number">                                                                           <!-- Część urojona drugiej liczby -->
+<p>                                                                                                             <!--Druga liczba zespolona-->
+    a2: <input id="a2" type="number">                                                                           <!--Część rzeczywista drugiej liczby-->
+    b2: <input id="b2" type="number">                                                                           <!--Część urojona drugiej liczby-->
 </p>                                                                                                            
 </section>
-<section id="przycisk">																							<!-- Przyciski wywołujące odpowiednie operacje matematyczne -->
+<section id="przycisk">																							<!--Przyciski wywołujące odpowiednie operacje matematyczne-->
     <button onclick="dodaj()">Dodawanie</button>
     <button onclick="odejmij()">Odejmowanie</button>
     <button onclick="mnoz()">Mnożenie</button>
     <button onclick="podziel()">Dzielenie</button>
 </section>
 <section id="wyn">
-	<p id="wynik"></p>                                                                                          <!-- Miejsce wyświetlania wyniku -->
+	<p id="wynik"></p>                                                                                          <!--Miejsce wyświetlania wyniku-->
 </section>
 <script>
 function dodaj() {                                                                                              // Dodawanie liczb zespolonych:  (a1 + b1i) + (a2 + b2i) = (a1 + a2) + (b1 + b2)i
-    var a1 = parseFloat(document.getElementById("a1").value);                                                   // Pobranie i konwersja wartości z pól input na typ liczbowy (parseFloat)
-    var b1 = parseFloat(document.getElementById("b1").value);
-    var a2 = parseFloat(document.getElementById("a2").value);
-    var b2 = parseFloat(document.getElementById("b2").value);
+    var a1=parseFloat(document.getElementById("a1").value);                                                   	// Pobranie i konwersja wartości z pól input na typ liczbowy (parseFloat)
+    var b1=parseFloat(document.getElementById("b1").value);
+    var a2=parseFloat(document.getElementById("a2").value);
+    var b2=parseFloat(document.getElementById("b2").value);
                                                                                                                 
     document.getElementById("wynik").innerText="Wynik: "+(a1+a2)+" + "+(b1+b2)+"i";                             // Wyświetlenie wyniku w elemencie <p id="wynik">
 }
 
 function odejmij() {                                                                                            // Odejmowanie liczb zespolonych: (a1 + b1i) - (a2 + b2i) = (a1 - a2) + (b1 - b2)i
-    var a1 = parseFloat(document.getElementById("a1").value);
-    var b1 = parseFloat(document.getElementById("b1").value);
-    var a2 = parseFloat(document.getElementById("a2").value);
-    var b2 = parseFloat(document.getElementById("b2").value);
+    var a1=parseFloat(document.getElementById("a1").value);
+    var b1=parseFloat(document.getElementById("b1").value);
+    var a2=parseFloat(document.getElementById("a2").value);
+    var b2=parseFloat(document.getElementById("b2").value);
 
     document.getElementById("wynik").innerText="Wynik: "+(a1-a2)+" + "+(b1-b2)+"i";                             // Wyświetlenie wyniku w elemencie <p id="wynik">    
 }
 
 function mnoz() {                                                                                               // Mnożenie liczb zespolonych: (a1 + b1i)(a2 + b2i) = a1*a2 - b1*b2 + (a1*b2 + b1*a2)i ponieważ i² = -1
-    var a1 = parseFloat(document.getElementById("a1").value);
-    var b1 = parseFloat(document.getElementById("b1").value);
-    var a2 = parseFloat(document.getElementById("a2").value);
-    var b2 = parseFloat(document.getElementById("b2").value);
+    var a1=parseFloat(document.getElementById("a1").value);
+    var b1=parseFloat(document.getElementById("b1").value);
+    var a2=parseFloat(document.getElementById("a2").value);
+    var b2=parseFloat(document.getElementById("b2").value);
 
-    var a = a1*a2-b1*b2;                                                                                        // Część rzeczywista
-    var b = a1*b2+b1*a2;                                                                                        // Część urojona
+    var a=a1*a2-b1*b2;                                                                                        	// Część rzeczywista
+    var b=a1*b2+b1*a2;                                                                                        	// Część urojona
 
     document.getElementById("wynik").innerText="Wynik: "+a+" + "+b+"i";                                         // Wyświetlenie wyniku w elemencie <p id="wynik"> 
 }
 
 function podziel() {                                                                                            // Dzielenie liczb zespolonych: (a1 + b1i) / (a2 + b2i)  Wzór: [(a1*a2 + b1*b2) + (b1*a2 - a1*b2)i] / (a2² + b2²)
-    var a1 = parseFloat(document.getElementById("a1").value);
-    var b1 = parseFloat(document.getElementById("b1").value);
-    var a2 = parseFloat(document.getElementById("a2").value);
-    var b2 = parseFloat(document.getElementById("b2").value);
+    var a1=parseFloat(document.getElementById("a1").value);
+    var b1=parseFloat(document.getElementById("b1").value);
+    var a2=parseFloat(document.getElementById("a2").value);
+    var b2=parseFloat(document.getElementById("b2").value);
 
     var mianownik=a2*a2+b2*b2;                                                                                  // Mianownik (liczba rzeczywista)
     var a=(a1*a2+b1*b2)/mianownik;                                                                              // Część rzeczywista wyniku
