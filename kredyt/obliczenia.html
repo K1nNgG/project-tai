@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Kalkulator rat malejących</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../main/style.css">
+	<link rel="stylesheet" href="kredyt.css">
+</head>
+<body>
+	<!-- przy kliknięciu na logo, następuje powrót na główną stronę -->
+<a href="../main/index.html" class="link">  																   <!-- przy kliknięciu na logo, następuję powrót na glówną stronę -->
+    <header>
+        <section id="logo">
+            <h1>CALCULI</h1>
+            <img src="../main/logo_vector.svg" alt="Logo Strony">
+            <h1>PERITUS</h1>
+        </section> 
+        <h4>CREATI AD NUMERANDUM</h4> <!-- LOGO -->
+    </header>
+</a>
+<img src="../main/left_pillar.png" id="left-pillar" alt="pillar"> 
+<img src="../main/right_pillar.png" id="right-pillar" alt="pillar">
+<!-- =========================
+     FORMULARZ
+========================= -->
+<form id="loanForm">
+
+  <div class="input-group">
+    <label for="kwota">Kwota kredytu:</label>
+    <div class="input-with-unit">
+      <input type="text" id="kwota" placeholder="10000">
+      <span class="unit">zł</span>
+    </div>
+    <div class="tooltip" id="kwotaTooltip">Nieprawidłowa wartość</div>
+  </div>
+
+  <div class="input-group">
+    <label for="raty">Ilość rat miesięcznych:</label>
+    <div class="input-with-unit no-unit">
+      <input type="text" id="raty" placeholder="24">
+    </div>
+    <div class="tooltip" id="ratyTooltip">Nieprawidłowa wartość</div>
+  </div>
+
+  <div class="input-group">
+    <label for="oprocentowanie">Stopa procentowa:</label>
+    <div class="input-with-unit">
+      <input type="text" id="oprocentowanie" placeholder="5">
+      <span class="unit">%</span>
+    </div>
+    <div class="tooltip" id="oprocentowanieTooltip">Nieprawidłowa wartość</div>
+  </div>
+
+ <div class="input-group">
+  <label for="rodzajRaty">Rodzaj rat:</label>
+  <div class="input-with-unit no-unit">
+    <input type="text" id="rodzajRaty" name="rodzajRaty" placeholder="malejąca" readonly>
+  </div>
+</div>
+  <button type="submit">Oblicz</button>
+</form>
+<!-- =========================
+     WYNIKI
+========================= -->
+<div id="wyniki" style="display:none">
+    <h2>Wyniki</h2>
+    Pierwsza rata:<br>
+    <input id="pierwszaRata" readonly><br><br>
+
+    Ostatnia rata:<br>
+    <input id="ostatniaRata" readonly><br><br>
+
+    <table id="results" border="1">
+        <thead>
+            <tr>
+                <th>Rata nr</th>
+                <th>Część kapitałowa</th>
+                <th>Część odsetkowa</th>
+                <th>Rata całkowita</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3"><b>Łącznie do zapłaty</b></td>
+                <td id="sumaCalkowita"></td>
+            </tr>
+        </tfoot>
+    </table>
+    <br>
+    <button id="resetBtn">Licz ponownie</button>
+</div>
+<script src="skrypt.js"></script>
+</body>
+</html>
