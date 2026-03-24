@@ -1,6 +1,9 @@
-h1 {
-    color: #6b6618;
-    text-align: center;
+body {
+    margin-left: 70px;
+}
+
+section#logo,h4 {
+    margin-right: 70px;
 }
 
 h3#wymiary {
@@ -36,10 +39,3 @@ td {
     font-style: italic;
 }
 
-#b1,#b2,#b3,#b4 {
-    background-color: #f7f5dc;
-}
-
-#b1:hover,#b2:hover,#b3:hover,#b4:hover {
-    color: white;
-}
