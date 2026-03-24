@@ -11,6 +11,8 @@
 				</section> 
 				<h4>CREATI AD NUMERANDUM</h4> 
 			</header>
+			<img src="../main/left_pillar.png" id="left-pillar" alt="pillar">
+			<img src="../main/right_pillar.png" id="right-pillar" alt="pillar">
 		</a> 
 
 		<link rel="stylesheet" href="../main/style.css"> <!-- styl główny -->
@@ -57,6 +59,10 @@
 			oprocentowanie = parseFloat(document.getElementById('stopa').value)/100 // Roczna stopa oprocentowania
 			kapitalizacjee = parseFloat(document.getElementById('kapitalizacje').value) // Ilość kapitalizacji rocznie
 			okresczasowy = parseFloat(document.getElementById('czastrwania').value) // Czas trwania inwestycji
+			if (isNaN(kapital) || isNaN(oprocentowanie) || isNaN(kapitalizacjee) || isNaN(okresczasowy)) {
+			document.getElementById('wynik').innerHTML = "Błędne dane. Spróbuj ponownie."
+			}
+			else {
 			potega=kapitalizacjee*okresczasowy 
 			nawias=1+oprocentowanie/kapitalizacjee
 			nowynawias=1
@@ -66,6 +72,7 @@
 			}
 			wynik=parseInt(kapital*nowynawias)
 			document.getElementById('wynik').innerHTML = "Wartość inwestycji po "+okresczasowy+" latach wynosi: "+wynik+" zł"
+			}
 		}
 		</script>
 		<p id="wynik"></p> <!-- paragraf z wynikiem (klasyczny) -->
@@ -88,6 +95,10 @@
 			oprocentowaniedoplaty = parseFloat(document.getElementById('stopadoplaty').value)/100
 			kapitalizacjeedoplaty = parseFloat(document.getElementById('kapitalizacjedoplaty').value)
 			okresczasowydoplaty = parseFloat(document.getElementById('czastrwaniadoplaty').value)
+			if (isNaN(kapitaldoplaty) || isNaN(kwotadoplaty) || isNaN(oprocentowaniedoplaty) || isNaN(kapitalizacjeedoplaty) || isNaN(okresczasowydoplaty)) {
+			document.getElementById('wynikdoplaty').innerHTML = "Błędne dane. Spróbuj ponownie."
+			}
+			else {
 			potegadoplaty=kapitalizacjeedoplaty*okresczasowydoplaty
 			nawiasdoplaty=1+oprocentowaniedoplaty/kapitalizacjeedoplaty
 			nowynawiasdoplaty=1
@@ -99,9 +110,13 @@
 			doplacone=kwotadoplaty*(nowynawiasdoplaty-1)/(oprocentowaniedoplaty/kapitalizacjeedoplaty)
 			wynikdoplacone=parseInt(klasyczne+doplacone)
 			document.getElementById('wynikdoplaty').innerHTML = "Wartość inwestycji po "+okresczasowydoplaty+" latach wynosi: "+wynikdoplacone+" zł"
+			}
 		}
 		</script>
 		<p id="wynikdoplaty"></p> <!-- paragraf z wynikiem (dopłaty) -->
 	</section>
+	<footer id="user-help">
+		<h4 id="user-help"><a href="OPRACOWANIEZAGADNIENIA.PDF" target="_blank"><span>OPIS MERYTORYCZNY</span></a> <a href="" target="_blank"><span>POMOC DLA UŻYTKOWNIKA</span></a></h4>
+	</footer>
 	</body>
 </html>
