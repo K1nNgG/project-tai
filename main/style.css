@@ -182,9 +182,9 @@ footer #user-help {
 #left-pillar {
     position: fixed;      
     z-index: 5;     
-    height: auto;
-    width: 5.6vw;
-    min-width: 17px;
+    height: 100vh;
+    width: 5%;
+    min-width: 19px;
     left: 0px;
     top: 0px;
 }
@@ -192,10 +192,22 @@ footer #user-help {
 #right-pillar {
     position: fixed;      
     z-index: 5;     
-    height: auto;
-    width: 5.6vw;
+    height: 100vh;
+    width: 5%;
     min-width: 17px;
     right: 0px;
     top: 0px;
+}
+
+button {
+    background-color: #f7f5dc;
+    border: 1px solid #6b6618;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    color: white; 
+    background-color: #6b6618; 
 }
 
