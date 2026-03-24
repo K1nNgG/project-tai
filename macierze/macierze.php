@@ -7,17 +7,19 @@
     <link rel="stylesheet" href="macierze.css">
 </head>
 <body>
-<a href="../main/index.html" class="link">  <!-- przy kliknięciu na logo, następuję powrót na glówną stronę -->
+<a href="../main/index.html" class="link">
+<img src="../main/left_pillar.png" id="left-pillar" alt="pillar">
+<img src="../main/right_pillar.png" id="right-pillar" alt="pillar">
     <header>
         <section id="logo">
             <h1>CALCULI</h1>
             <img src="../main/logo_vector.svg" alt="Logo Strony">
             <h1>PERITUS</h1>
         </section> 
-        <h4>CREATI AD NUMERANDUM</h4> <!-- LOGO -->
+        <h4>CREATI AD NUMERANDUM</h4>
     </header>
 </a> 
-<br><h1> Macierze </h1>
+<br>
 <h3 id="wymiary">1. Podaj wymiary macierzy</h3>
 <form method="get">
     Wiersze: <input type="number" name="w"  id ="ww" value="<?php echo $_GET['w'] ?? 2; ?>"> <br> <br>
@@ -81,6 +83,10 @@ if (isset($_POST['A'], $_POST['B'], $_POST['op'])) {
     echo "</table>";
 }
 ?>
+
+<footer>
+    <h4 id="user-help"><a href="Macierze.docx"><span>OPIS MERYTORYCZNY</span></a> <a href="Przewodnik.docx"><span>POMOC DLA UŻYTKOWNIKA</span></a></h4>
+</footer>
 
 </body>
 </html>
