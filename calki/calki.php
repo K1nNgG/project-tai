@@ -78,7 +78,7 @@
     ?>
 </div>
 <footer>
- <h4 id="user-help"><a href="calki.docx"><span>OPIS MERYTORYCZNY</span></a> <a href="calki2.docx"><span>POMOC DLA UŻYTKOWNIKA</span></a></h4>
+ <h4 id="user-help"><a target="_blank" href="calki.pdf"><span>OPIS MERYTORYCZNY</span></a> <a target="_blank" href="calki2.pdf"><span>POMOC DLA UŻYTKOWNIKA</span></a></h4>
 </footer>
 </body>
 </html>

@@ -68,17 +68,3 @@ button:hover {
     color: white; 
     background-color: #6b6618; 
 }
-
-
-footer {
-    text-align: center;
-    margin-top: 40px;
-}
-
-footer a {
-    text-decoration: none;
-    color: #333;
-    margin: 0 20px;
-    font-size: 14px;
-    border-bottom: 1px solid #6b6618;
-}
