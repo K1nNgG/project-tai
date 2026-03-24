@@ -19,7 +19,7 @@
         <h4>CREATI AD NUMERANDUM</h4>
     </header>
 </a> 
-<br><h1> Macierze </h1>
+<br>
 <h3 id="wymiary">1. Podaj wymiary macierzy</h3>
 <form method="get">
     Wiersze: <input type="number" name="w"  id ="ww" value="<?php echo $_GET['w'] ?? 2; ?>"> <br> <br>
