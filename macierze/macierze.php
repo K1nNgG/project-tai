@@ -85,7 +85,7 @@ if (isset($_POST['A'], $_POST['B'], $_POST['op'])) {
 ?>
 
 <footer>
-    <h4 id="user-help"><a href="Macierze.docx"><span>OPIS MERYTORYCZNY</span></a> <a href="Przewodnik.docx"><span>POMOC DLA UŻYTKOWNIKA</span></a></h4>
+    <h4 id="user-help"><a target="_blank" href="Macierze.pdf"><span>OPIS MERYTORYCZNY</span></a> <a target="_blank" href="Przewodnik.pdf"><span>POMOC DLA UŻYTKOWNIKA</span></a></h4>
 </footer>
 
 </body>
