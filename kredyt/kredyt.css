@@ -48,12 +48,14 @@ button[type="submit"],
 
 /* Tabela wyników pozostaje w pełni stylowana */
 #results {
-  width: 100%;
+  width: calc(100% - 20px);
   border-collapse: collapse;
   font-size: 1em;
   color: #333;
   margin-top: 10px;
-  width: calc(100% - 20px);
+
+  position: relative;
+  left: -10px; /* <-- to przesuwa tabelę w lewo o 10px */
 }
 
 #results thead th {
