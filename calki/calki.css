@@ -1,0 +1,84 @@
+
+body {
+    margin-left: 70px;
+}
+
+header, section#logo, h4 {
+    margin-right: 70px;
+    text-align: center;
+}
+
+
+#logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+#logo h1 {
+    color: #6b6618;
+    margin: 0;
+    font-size: 250%;
+}
+
+header h4 {
+    letter-spacing: 2px;
+    color: #444;
+}
+
+
+#left-pillar { position: fixed; left: 0; top: 0; height: 100vh; }
+#right-pillar { position: fixed; right: 0; top: 0; height: 100vh; }
+
+
+.container h2 {
+    color: #6b6618;
+    text-align: center;
+    font-style: italic;
+    font-size: 140%;
+}
+
+
+form {
+    text-align: center;
+    margin-top: 20px;
+}
+
+label {
+    font-weight: bold;
+    font-style: italic;
+}
+
+input {
+    border: 1px solid #aaa;
+    margin: 0 10px;
+    width: 80px;
+}
+
+
+button {
+    background-color: #f7f5dc;
+    border: 1px solid #6b6618;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    color: white; 
+    background-color: #6b6618; 
+}
+
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 20px;
+    font-size: 14px;
+    border-bottom: 1px solid #6b6618;
+}
