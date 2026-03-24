@@ -50,6 +50,11 @@ function dodaj() {                                                              
     var b1=parseFloat(document.getElementById("b1").value);
     var a2=parseFloat(document.getElementById("a2").value);
     var b2=parseFloat(document.getElementById("b2").value);
+	
+	if (isNaN(a1) || isNaN(b1) || isNaN(a2) || isNaN(b2)) {														// Sprawdzenie czy wszystkie pola zawierają poprawne liczby
+        document.getElementById("wynik").innerText="Musisz podać wszystkie liczby";
+        return;
+    }
                                                                                                                 
     document.getElementById("wynik").innerText="Wynik: "+(a1+a2)+" + "+(b1+b2)+"i";                             // Wyświetlenie wyniku w elemencie <p id="wynik">
 }
@@ -59,6 +64,11 @@ function odejmij() {                                                            
     var b1=parseFloat(document.getElementById("b1").value);
     var a2=parseFloat(document.getElementById("a2").value);
     var b2=parseFloat(document.getElementById("b2").value);
+	
+	if (isNaN(a1) || isNaN(b1) || isNaN(a2) || isNaN(b2)) {														// Sprawdzenie czy wszystkie pola zawierają poprawne liczby
+        document.getElementById("wynik").innerText="Musisz podać wszystkie liczby";
+        return;
+    }	
 
     document.getElementById("wynik").innerText="Wynik: "+(a1-a2)+" + "+(b1-b2)+"i";                             // Wyświetlenie wyniku w elemencie <p id="wynik">    
 }
@@ -68,6 +78,11 @@ function mnoz() {                                                               
     var b1=parseFloat(document.getElementById("b1").value);
     var a2=parseFloat(document.getElementById("a2").value);
     var b2=parseFloat(document.getElementById("b2").value);
+	
+	if (isNaN(a1) || isNaN(b1) || isNaN(a2) || isNaN(b2)) {														// Sprawdzenie czy wszystkie pola zawierają poprawne liczby
+        document.getElementById("wynik").innerText="Musisz podać wszystkie liczby";
+        return;
+    }
 
     var a=a1*a2-b1*b2;                                                                                        	// Część rzeczywista
     var b=a1*b2+b1*a2;                                                                                        	// Część urojona
@@ -80,6 +95,11 @@ function podziel() {                                                            
     var b1=parseFloat(document.getElementById("b1").value);
     var a2=parseFloat(document.getElementById("a2").value);
     var b2=parseFloat(document.getElementById("b2").value);
+	
+	if (isNaN(a1) || isNaN(b1) || isNaN(a2) || isNaN(b2)) {														// Sprawdzenie czy wszystkie pola zawierają poprawne liczby
+        document.getElementById("wynik").innerText="Musisz podać wszystkie liczby";
+        return;
+    }
 
     var mianownik=a2*a2+b2*b2;                                                                                  // Mianownik (liczba rzeczywista)
     var a=(a1*a2+b1*b2)/mianownik;                                                                              // Część rzeczywista wyniku
@@ -90,8 +110,7 @@ function podziel() {                                                            
 </script>
 </body>
 <footer>
-	<h4 id="user-help"><a href=""><span>OPIS MERYTORYCZNY</span></a>
-
-	<a href=""><span>POMOC DLA UŻYTKOWNIKA</span></a></h4>
+	<h4 id="user-help"><a href="Liczby_zespolone.pdf" target="_blank"><span>OPIS MERYTORYCZNY</span></a>		 <!--Link do opisu merytorycznego-->
+	<a href="Liczby_zespolone_pomoc.pdf" target="_blank"><span>POMOC DLA UŻYTKOWNIKA</span></a></h4>			 <!--Link do pomocy dla użytkownika-->
 </footer>
 </html>
