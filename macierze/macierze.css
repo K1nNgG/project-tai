@@ -23,14 +23,6 @@ td {
     font-style: italic;
 }
 
-#pierwszyprzycisk {
-    background-color: #f7f5dc;
-}
-
-#pierwszyprzycisk:hover {
-    color: white;
-}
-
 #ww:hover {
     font-style: italic;
 }
