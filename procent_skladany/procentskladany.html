@@ -11,7 +11,7 @@
 				</section> 
 				<h4>CREATI AD NUMERANDUM</h4> 
 			</header>
-			<img src="../main/left_pillar.png" id="left-pillar" alt="pillar">
+			<img src="../main/left_pillar.png" id="left-pillar" alt="pillar"> <!-- filary -->
 			<img src="../main/right_pillar.png" id="right-pillar" alt="pillar">
 		</a> 
 
@@ -51,27 +51,27 @@
 		Roczna stopa oprocentowania (%): <input type='text' value='' id='stopa'><br><br>
 		Liczba kapitalizacji w roku: <input type='text' value='' id='kapitalizacje'><br><br>
 		Czas trwania inwestycji (lata): <input type='text' value='' id='czastrwania'><br><br>
-		<input type='button' value='Prześlij' onClick='klasyczna()'>
+		<input type='button' value='Oblicz' onClick='klasyczna()'>
 		</form>
-		<script type='text/javascript'>
-		function klasyczna() {
+		<script type='text/javascript'> 
+		function klasyczna() { <!-- funkcja odpowiadająca za procent składany klasyczny -->
 			kapital = parseFloat(document.getElementById('kapitalny').value) // Kapitał
 			oprocentowanie = parseFloat(document.getElementById('stopa').value)/100 // Roczna stopa oprocentowania
 			kapitalizacjee = parseFloat(document.getElementById('kapitalizacje').value) // Ilość kapitalizacji rocznie
 			okresczasowy = parseFloat(document.getElementById('czastrwania').value) // Czas trwania inwestycji
-			if (isNaN(kapital) || isNaN(oprocentowanie) || isNaN(kapitalizacjee) || isNaN(okresczasowy)) {
-			document.getElementById('wynik').innerHTML = "Błędne dane. Spróbuj ponownie."
+			if (isNaN(kapital) || isNaN(oprocentowanie) || isNaN(kapitalizacjee) || isNaN(okresczasowy)) { // Weryfikacja poprawności danych
+			document.getElementById('wynik').innerHTML = "Błędne dane. Spróbuj ponownie." // Odrzucenie danych - informacja
 			}
-			else {
-			potega=kapitalizacjee*okresczasowy 
-			nawias=1+oprocentowanie/kapitalizacjee
-			nowynawias=1
-			while (potega>0) {
-				nowynawias=nowynawias*nawias
-				potega--
+			else { // Obliczanie procentu składanego klasycznego
+			potega=kapitalizacjee*okresczasowy // Oblicza całkowitą liczbę kapitalizacji
+			nawias=1+oprocentowanie/kapitalizacjee // Oblicza wartość w nawiasie ze wzoru.
+			nowynawias=1 // Zmienna pomocnicza do potęgowania (zaczynamy od 1, nie 0)
+			while (potega>0) { 
+				nowynawias=nowynawias*nawias // potęgowanie
+				potega-- // dekrementacja
 			}
-			wynik=parseInt(kapital*nowynawias)
-			document.getElementById('wynik').innerHTML = "Wartość inwestycji po "+okresczasowy+" latach wynosi: "+wynik+" zł"
+			wynik=parseInt(kapital*nowynawias) // Oblicza końcową wartość inwestycji i zamienia na liczbę całkowitą.
+			document.getElementById('wynik').innerHTML = "Wartość inwestycji po "+okresczasowy+" latach wynosi: "+wynik+" zł" // Wyświetlanie wyniku dla użytkownika
 			}
 		}
 		</script>
@@ -89,33 +89,33 @@
 		<input type='button' value='Prześlij' onClick='doplaty()'>
 		</form>
 		<script type='text/javascript'>
-		function doplaty() {
-			kapitaldoplaty = parseFloat(document.getElementById('kapitalnydoplaty').value)
-			kwotadoplaty = parseFloat(document.getElementById('doplata').value)
-			oprocentowaniedoplaty = parseFloat(document.getElementById('stopadoplaty').value)/100
-			kapitalizacjeedoplaty = parseFloat(document.getElementById('kapitalizacjedoplaty').value)
-			okresczasowydoplaty = parseFloat(document.getElementById('czastrwaniadoplaty').value)
-			if (isNaN(kapitaldoplaty) || isNaN(kwotadoplaty) || isNaN(oprocentowaniedoplaty) || isNaN(kapitalizacjeedoplaty) || isNaN(okresczasowydoplaty)) {
-			document.getElementById('wynikdoplaty').innerHTML = "Błędne dane. Spróbuj ponownie."
+		function doplaty() { <!-- funkcja odpowiadająca za procent składany z dopłatami -->
+			kapitaldoplaty = parseFloat(document.getElementById('kapitalnydoplaty').value) // Kapitał
+			kwotadoplaty = parseFloat(document.getElementById('doplata').value) // Kwota regularnej dopłaty
+			oprocentowaniedoplaty = parseFloat(document.getElementById('stopadoplaty').value)/100 // Roczna stopa oprocentowania
+			kapitalizacjeedoplaty = parseFloat(document.getElementById('kapitalizacjedoplaty').value) // Liczba kapitalizacji w roku
+			okresczasowydoplaty = parseFloat(document.getElementById('czastrwaniadoplaty').value) // Okres inwestycji (lata)
+			if (isNaN(kapitaldoplaty) || isNaN(kwotadoplaty) || isNaN(oprocentowaniedoplaty) || isNaN(kapitalizacjeedoplaty) || isNaN(okresczasowydoplaty)) { // Weryfikacja danych
+			document.getElementById('wynikdoplaty').innerHTML = "Błędne dane. Spróbuj ponownie." // Błędne dane - informacja dla użytkownika
 			}
-			else {
-			potegadoplaty=kapitalizacjeedoplaty*okresczasowydoplaty
-			nawiasdoplaty=1+oprocentowaniedoplaty/kapitalizacjeedoplaty
-			nowynawiasdoplaty=1
-			while (potegadoplaty>0) {
-				nowynawiasdoplaty=nowynawiasdoplaty*nawiasdoplaty
-				potegadoplaty--
+			else { // Dane prawidłowe - Liczymy
+			potegadoplaty=kapitalizacjeedoplaty*okresczasowydoplaty // Liczba okresów kapitalizacji
+			nawiasdoplaty=1+oprocentowaniedoplaty/kapitalizacjeedoplaty // Podstawa wzoru dla jednego okresu
+			nowynawiasdoplaty=1 // Zmienna pomocnicza do potęgowania (zaczynamy od 1, nie 0)
+			while (potegadoplaty>0) { 
+				nowynawiasdoplaty=nowynawiasdoplaty*nawiasdoplaty // potęgowanie
+				potegadoplaty-- // dekrementacja
 			}
-			klasyczne=kapitaldoplaty*nowynawiasdoplaty
-			doplacone=kwotadoplaty*(nowynawiasdoplaty-1)/(oprocentowaniedoplaty/kapitalizacjeedoplaty)
-			wynikdoplacone=parseInt(klasyczne+doplacone)
-			document.getElementById('wynikdoplaty').innerHTML = "Wartość inwestycji po "+okresczasowydoplaty+" latach wynosi: "+wynikdoplacone+" zł"
+			klasyczne=kapitaldoplaty*nowynawiasdoplaty // Wartość kapitału początkowego po kapitalizacji
+			doplacone=kwotadoplaty*(nowynawiasdoplaty-1)/(oprocentowaniedoplaty/kapitalizacjeedoplaty) // Wartość wszystkich dopłat po uwzględnieniu procentu składanego
+			wynikdoplacone=parseInt(klasyczne+doplacone) // Suma kapitału początkowego + dopłat jako int
+			document.getElementById('wynikdoplaty').innerHTML = "Wartość inwestycji po "+okresczasowydoplaty+" latach wynosi: "+wynikdoplacone+" zł" // Wyświetlenie końcowego wyniku dla użytkownika
 			}
 		}
 		</script>
 		<p id="wynikdoplaty"></p> <!-- paragraf z wynikiem (dopłaty) -->
 	</section>
-	<footer id="user-help">
+	<footer id="user-help"> <!-- stopka z opisem merytorycznym oraz pomocą dla użytkownika -->
 		<h4 id="user-help"><a href="OPRACOWANIEZAGADNIENIA.PDF" target="_blank"><span>OPIS MERYTORYCZNY</span></a> <a href="" target="_blank"><span>POMOC DLA UŻYTKOWNIKA</span></a></h4>
 	</footer>
 	</body>
