@@ -1,35 +1,35 @@
 h2 {
-	text-align: center;										/*Wyśrodkowanie tekstu */
-	font-size: 22px;										/*Rozmiar czcionki */
-	margin-top: 100px; 										/*Odstęp od góry strony */
+	text-align: center;										/*Wyśrodkowanie tekstu*/
+	font-size: 22px;										/*Rozmiar czcionki*/
+	margin-top: 100px; 										/*Odstęp od góry strony*/
 }
 
 #post {
-	text-align: center;										/*Wyśrodkowanie tekstu */
-	text-decoration: underline;								/*Podkreślenie tekstu */
-	text-underline-offset: 5px; 							/*Odstęp podkreślenia od tekstu */
-	font-weight: bold;										/*Pogrubienie tekstu */
-	font-size: 18px;										/*Rozmiar czcionki */
-	margin-top: 25px; 										/*Odstęp od góry strony */
+	text-align: center;										/*Wyśrodkowanie tekstu*/
+	text-decoration: underline;								/*Podkreślenie tekstu*/
+	text-underline-offset: 5px; 							/*Odstęp podkreślenia od tekstu*/
+	font-weight: bold;										/*Pogrubienie tekstu*/
+	font-size: 18px;										/*Rozmiar czcionki*/
+	margin-top: 25px; 										/*Odstęp od góry strony*/
 }
 
 #liczby {
-	text-align: center; 									/*Wyśrodkowanie tekstu */
-    font-weight: bold; 										/*Pogrubienie tekstu */
+	text-align: center; 									/*Wyśrodkowanie tekstu*/
+    font-weight: bold; 										/*Pogrubienie tekstu*/
 }
 
 #przycisk {
-    display: flex; 											/*Użycie flexboxa dla układu przycisków */
-    justify-content: center; 								/*Wyśrodkowanie przycisków w poziomie */
-    gap: 10px; 												/*Odstęp między przyciskami */
+    display: flex; 											/*Użycie flexboxa dla układu przycisków*/
+    justify-content: center; 								/*Wyśrodkowanie przycisków w poziomie*/
+    gap: 10px; 												/*Odstęp między przyciskami*/
 }
 
 #przycisk button:hover {
-    color: blue;											/*Zmiana koloru tekstu przycisku na niebieski */
+    color: blue;											/*Zmiana koloru tekstu przycisku na niebieski*/
 }
 
 #wyn {
-    text-align: center; 									/*Wyśrodkowanie tekstu */
-    font-size: 18px; 										/*Rozmiar czcionki */
-    font-weight: bold; 										/*Pogrubienie tekstu */
+    text-align: center; 									/*Wyśrodkowanie tekstu*/
+    font-size: 18px; 										/*Rozmiar czcionki*/
+    font-weight: bold; 										/*Pogrubienie tekstu*/
 }
