@@ -24,10 +24,6 @@ h2 {
     gap: 10px; 												/*Odstęp między przyciskami */
 }
 
-#przycisk button:hover {
-    color: blue;											/*Zmiana koloru tekstu przycisku na niebieski */
-}
-
 #wyn {
     text-align: center; 									/*Wyśrodkowanie tekstu */
     font-size: 18px; 										/*Rozmiar czcionki */
