@@ -86,7 +86,7 @@
 		Roczna stopa oprocentowania (%): <input type='text' value='' id='stopadoplaty'><br><br>
 		Liczba kapitalizacji w roku: <input type='text' value='' id='kapitalizacjedoplaty'><br><br>
 		Czas trwania inwestycji (lata): <input type='text' value='' id='czastrwaniadoplaty'><br><br>
-		<input type='button' value='Prześlij' onClick='doplaty()'>
+		<input type='button' value='Oblicz' onClick='doplaty()'>
 		</form>
 		<script type='text/javascript'>
 		function doplaty() { <!-- funkcja odpowiadająca za procent składany z dopłatami -->
@@ -116,7 +116,9 @@
 		<p id="wynikdoplaty"></p> <!-- paragraf z wynikiem (dopłaty) -->
 	</section>
 	<footer id="user-help"> <!-- stopka z opisem merytorycznym oraz pomocą dla użytkownika -->
-		<h4 id="user-help"><a href="OPRACOWANIEZAGADNIENIA.PDF" target="_blank"><span>OPIS MERYTORYCZNY</span></a> <a href="" target="_blank"><span>POMOC DLA UŻYTKOWNIKA</span></a></h4>
+		<h4 id="user-help">
+		<a href="OPRACOWANIEZAGADNIENIA.PDF" target="_blank"><span>OPIS MERYTORYCZNY</span></a> 
+		<a href="pomocuzytkownik.pdf" target="_blank"><span>POMOC DLA UŻYTKOWNIKA</span></a></h4>
 	</footer>
 	</body>
 </html>
