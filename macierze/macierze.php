@@ -5,6 +5,7 @@
     <title>Macierze</title>
     <link rel="stylesheet" href="../main/style.css">
     <link rel="stylesheet" href="macierze.css">
+    <link rel="icon" type="image/png" href="../main/favicon.png">
 </head>
 <body>
 <a href="../main/index.html" class="link">

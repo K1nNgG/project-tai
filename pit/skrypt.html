@@ -6,6 +6,7 @@
     <title>Obliczanie PIT 2020</title>
     <link rel="stylesheet" href="../main/style.css">
     <link rel="stylesheet" href="style_pit.css">
+    <link rel="icon" type="image/png" href="../main/favicon.png">
 </head>
 <body>
     <a href="../main/index.html" class="link">  <!-- przy kliknięciu na logo, następuję powrót na glówną stronę -->
@@ -18,6 +19,8 @@
         <h4>CREATI AD NUMERANDUM</h4> <!-- LOGO -->
     </header>
     </a>
+    <img src="../main/left_pillar.png" id="left-pillar" alt="pillar">
+    <img src="../main/right_pillar.png" id="right-pillar" alt="pillar">
     <section id="blok">
     <label>Podaj przychód roczny:</label><br>
     <input type="text" id="przychod"><br>
@@ -28,6 +31,10 @@
     <button onclick="oblicz()">Oblicz podatek</button> <!-- wywolanie funkcji przyciskiem -->
     <p id="wynik"></p>
 </section>
+	<footer id="user-help">
+		<h4 id="user-help">
+		<a href="opracowanie_tematu_pit.pdf" target="_blank"><span>OPIS MERYTORYCZNY</span></a> 
+	</footer>
 <script type="text/javascript">
 function oblicz() { //funkcja do obliczania dochodu i podatku
     var przychod = document.getElementById("przychod").value;

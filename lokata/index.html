@@ -6,6 +6,7 @@
     <title>Kalkulator lokaty</title>
     <link rel="stylesheet" href="../main/style.css">
     <link rel="stylesheet" href="lokata.css">
+    <link rel="icon" type="image/png" href="../main/favicon.png">
 </head>
 
 <body>
@@ -19,6 +20,8 @@
         <h4>CREATI AD NUMERANDUM</h4> <!-- LOGO -->
     </header>
     </a> 
+    <img src="../main/left_pillar.png" id="left-pillar" alt="pillar">
+    <img src="../main/right_pillar.png" id="right-pillar" alt="pillar">
     <label>Wkład własny (zł):</label><br>
     <input type="number" id="kapital"><br><br>
     <label>Oprocentowanie (%):</label><br>
@@ -29,6 +32,10 @@
     <input type="number" id="odnowienia"><br><br>
     <button onclick="obliczLokate()">Oblicz</button>
     <p id="wynik"></p>
+	<footer id="user-help">
+		<h4 id="user-help">
+		<a href="Merytoryczne_Opracowanie.pdf" target="_blank"><span>OPIS MERYTORYCZNY</span></a> 
+	</footer>
     <script src="lokata.js"></script>
 </body>
 </html>
