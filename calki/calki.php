@@ -5,7 +5,7 @@
     <title>Projekt: Całkowanie Numeryczne</title>
 	<link rel="stylesheet" href="../main/style.css">
 	<link rel="stylesheet" href="calki.css">
-	
+	<link rel="icon" type="image/png" href="../main/favicon.png">
    
 </head>
 <body>
